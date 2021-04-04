@@ -1,0 +1,112 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home_text {
+  margin-top: 50px;
+}
+
+.home_text > h1 {
+  font-weight: normal;
+}
+
+.home_text > p {
+  margin-top: 20px;
+  margin-left: -50px;
+  font-size: 20px;
+  color: gray;
+}
+
+.due_tasks {
+  display: flex;
+  align-self: left;
+  flex-direction: row;
+  margin-top: 70px;
+  width: 100vh;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(202, 199, 199);
+  padding-bottom: 10px;
+}
+
+.all_tasks {
+  color: rgb(124, 13, 228);
+  margin-left: auto;
+  font-weight: normal;
+}
+
+.projects {
+  display: flex;
+  align-self: left;
+  flex-direction: row;
+  margin-top: 70px;
+  width: 100vh;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(202, 199, 199);
+  padding-bottom: 10px;
+}
+
+.pro_button {
+  margin-left: auto;
+  color: rgb(175, 174, 174);
+}
+
+.add_projects {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100vh;
+}
+
+.recent_projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  width: 150px;
+  position: relative;
+  transition: all 0.1s linear;
+  border-radius: 20px;
+}
+
+.recent_projects:hover {
+  height: 200px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: rgb(248, 245, 245);
+  transition: all 0.1s linear;
+  transform: scale(1.1);
+}
+
+.project_card {
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 120px;
+  background-color: rgb(228, 11, 112);
+}
+
+.recent_projects > p {
+  margin-top: 5px;
+  margin-left: 7px;
+  font-size: small;
+}
+
+.add_pro {
+  border-radius: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 120px;
+  border: 1px dashed gray;
+}
+.add_pro:hover {
+  background-color: white;
+}

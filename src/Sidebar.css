@@ -1,0 +1,48 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: black;
+  flex-direction: column;
+  display: visible;
+  transition: width 0.15s ease-in-out;
+}
+
+.sidebar_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.logo_img {
+  width: 100px;
+  margin-left: 10px;
+}
+
+.sidebar_body {
+  display: flex;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  margin-left: -15px;
+}
+
+.icon_text {
+  position: relative;
+  margin-left: 5px;
+  font-weight: normal;
+  color: rgb(180, 177, 177);
+}
+
+.icon {
+  color: rgb(180, 177, 177);
+  margin-left: 25px;
+}
+
+.show_sidebar {
+  transition: width 0.25s ease-in-out;
+  visibility: hidden;
+  width: 0px;
+}
