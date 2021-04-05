@@ -1,0 +1,52 @@
+.mytasks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-top: 0.5px solid rgb(236, 231, 231);
+  margin-top: 10px;
+  background-color: rgb(243, 242, 242);
+}
+
+.mytasks_tasklist {
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  border: none;
+  width: 35vh;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  transition: border 0.2s ease;
+  background-color: rgb(252, 250, 250);
+}
+
+.mytasks_tasklist:hover {
+  border: 1px solid rgb(224, 224, 224);
+  transition: border 0s ease;
+}
+
+.mytasks_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 12px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.mytasks_header > p {
+  margin-right: auto;
+  color: rgb(104, 103, 103);
+}
+
+.mytasks_card {
+  margin-top: 10px;
+  margin-left: 14px;
+  width: 30vh;
+  height: 10vh;
+  border: 1px solid rgb(214, 212, 212);
+  border-radius: 7px;
+  box-shadow: 5px rgb(226, 226, 226);
+  background-color: white;
+}

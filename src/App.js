@@ -5,6 +5,7 @@ import Sidebar from './Sidebar'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import './Navbar.css'
+import Goles from './Goles'
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           <Switch>
             <Route path='/MyTasks'>
               <MyTasks />
+            </Route>
+            <Route path='/Goles'>
+              <Goles />
             </Route>
             <Route path='/'>
               <Home />

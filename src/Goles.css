@@ -1,0 +1,64 @@
+.goles {
+  display: fles;
+  flex-direction: column;
+  border-top: 0.5px solid rgb(236, 231, 231);
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.goles_add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+  border-bottom: 0.5px solid rgb(236, 231, 231);
+}
+
+.goles_add {
+  margin-right: auto;
+}
+
+.points {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(236, 231, 231);
+  padding: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.points > p {
+  color: rgb(141, 139, 139);
+  font-size: 12px;
+}
+
+.goles_card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgb(236, 231, 231);
+  padding: 15px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 30px;
+  transition: all 0.5s ease;
+}
+
+.goles_card > p {
+  color: rgb(141, 139, 139);
+  font-size: 15px;
+}
+
+.extra {
+  margin-right: 60px;
+}
+
+.goles_card:hover {
+  transition: all 0.5s ease;
+  background-color: rgb(252, 248, 248);
+}
