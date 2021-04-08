@@ -26,7 +26,7 @@
 .option {
   display: flex;
   flex-direction: column;
-  margin-left: -15px;
+  width: 100%;
 }
 
 .icon_text {
@@ -45,4 +45,25 @@
   transition: width 0.25s ease-in-out;
   visibility: hidden;
   width: 0px;
+  font-size: 0;
+}
+
+.option_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: rgb(221, 218, 218);
+  padding: 18px;
+  margin-top: 10px;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.option_card:hover {
+  background-color: rgb(83, 83, 83);
+  transition: all 0.5s ease;
+}
+
+*:link {
+  text-decoration: none;
 }

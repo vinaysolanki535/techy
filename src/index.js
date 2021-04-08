@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { AppProvider } from './Context'
+import { StateProvider } from './StateProvider'
+import reducer, { initailState } from './reducer'
+import { useGlobalContext } from './Context'
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
+    <StateProvider initialState={initailState} reducer={reducer}>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

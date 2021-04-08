@@ -4,13 +4,17 @@ import ArrowRightIcon from '@material-ui/icons/ArrowRight'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
 import BorderAllIcon from '@material-ui/icons/BorderAll'
 import { Add, Menu, Search } from '@material-ui/icons'
+import { useGlobalContext } from './Context'
+import { Link } from '@material-ui/core'
 
 function Home() {
+  const { userName } = useGlobalContext()
+
   return (
     <>
       <div className='home'>
         <div className='home_text'>
-          <h1>Welcome to Techy, vinay</h1>
+          <h1>Welcome to Scoro, {userName}</h1>
           <p>Check out any upcoming tasks and recent projects below!</p>
         </div>
 

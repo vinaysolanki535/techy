@@ -1,0 +1,15 @@
+.drower {
+  z-index: 5;
+  height: 100.5%;
+  width: 40%;
+  background-color: rgb(255, 255, 255);
+  right: 0px;
+  position: absolute;
+  display: visible;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.drower_close {
+  width: 0;
+  display: none;
+}

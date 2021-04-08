@@ -77,7 +77,7 @@
   border-radius: 20px;
   background-color: rgb(248, 245, 245);
   transition: all 0.1s linear;
-  transform: scale(1.1);
+  transform: translateY(-10px);
 }
 
 .project_card {

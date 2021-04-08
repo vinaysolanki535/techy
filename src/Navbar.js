@@ -1,12 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { IconButton, Button, Avatar } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { useGlobalContext } from './Context'
 import { Add, Menu, Search } from '@material-ui/icons'
 
+let useClickOutside = (handler) => {
+  const domNode = useRef()
+  useEffect(() => {
+    let maybeHandler = (e) => {
+      if (domNode.current && !domNode.current.contains(e.target)) {
+        handler()
+      }
+    }
+
+    document.addEventListener('mousedown', maybeHandler)
+
+    return () => {
+      document.removeEventListener('mousedown', maybeHandler)
+    }
+  })
+
+  return domNode
+}
+
 function Navbar() {
-  const { isSidebarOpen, openSidebar } = useGlobalContext()
+  const {
+    isSidebarOpen,
+    openSidebar,
+    headerName,
+    closeDrower,
+  } = useGlobalContext()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const domNode = useClickOutside(() => {
+    closeDrower()
+    setIsSearchOpen(false)
+  })
 
   return (
     <nav className='navbar'>
@@ -17,10 +45,11 @@ function Navbar() {
             onClick={openSidebar}
           />
         </IconButton>
-        <h2 className='h2_text'>Home</h2>
+        <h2 className='h2_text'>{headerName}</h2>
       </div>
       <div className='navbar_right'>
         <div
+          ref={domNode}
           className={`${
             isSearchOpen ? 'nav_search nav_search_click' : 'nav_search'
           }`}

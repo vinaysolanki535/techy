@@ -9,9 +9,11 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 import BarChartIcon from '@material-ui/icons/BarChart'
 import SportsGolfIcon from '@material-ui/icons/SportsGolf'
 import { useGlobalContext } from './Context'
+import Data from '../src/Data/Data'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
-  const { isSidebarOpen, closeSidebar } = useGlobalContext()
+  const { isSidebarOpen, closeSidebar, setHeaderName } = useGlobalContext()
 
   return (
     <div className={`${isSidebarOpen ? 'sidebar' : 'show_sidebar'}`}>
@@ -26,26 +28,20 @@ function Sidebar() {
       </div>
       <div className='sidebar_body'>
         <div className='option'>
-          <IconButton>
-            <HomeIcon style={{ color: 'rgb(180, 177, 177)' }} />
-            <h6 className='icon_text'>Home</h6>
-          </IconButton>
-          <IconButton>
-            <CheckCircleOutlineIcon className='icon' />
-            <h6 className='icon_text'>My Tasks</h6>
-          </IconButton>
-          <IconButton>
-            <NotificationsIcon style={{ color: 'rgb(180, 177, 177)' }} />
-            <h6 className='icon_text'>Inbox</h6>
-          </IconButton>
-          <IconButton>
-            <BarChartIcon className='icon' />
-            <h6 className='icon_text'>Portfolio</h6>
-          </IconButton>
-          <IconButton>
-            <SportsGolfIcon style={{ color: 'rgb(180, 177, 177)' }} />
-            <h6 className='icon_text'>Goles</h6>
-          </IconButton>
+          {Data.map((data) => {
+            return (
+              <Link to={data.link}>
+                <div
+                  className='option_card'
+                  onClick={() => setHeaderName(`${data.name}`)}
+                >
+                  {data.icon}
+                  &nbsp; &nbsp;
+                  {data.name}
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>
