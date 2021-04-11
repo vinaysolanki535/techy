@@ -11,9 +11,9 @@ import { useStateValue } from './StateProvider'
 import TaskContainer from './TaskContainer'
 
 function MyTasks() {
-  const { openDrower } = useGlobalContext()
   const [{ user }] = useStateValue()
   const [snapShot, setSnapShot] = useState([])
+  const { isDrowerOpen } = useGlobalContext()
   const tasks = [
     {
       id: 1,
@@ -43,7 +43,7 @@ function MyTasks() {
           return <TaskContainer key={val.id} tasktype={val.type} />
         })}
       </div>
-      <Drower />
+      {isDrowerOpen && <Drower />}
     </>
   )
 }

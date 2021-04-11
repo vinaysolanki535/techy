@@ -3,6 +3,8 @@ import { IconButton, Button, Avatar } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import { useGlobalContext } from './Context'
 import { Add, Menu, Search } from '@material-ui/icons'
+import firebase from 'firebase'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 let useClickOutside = (handler) => {
   const domNode = useRef()
@@ -24,6 +26,7 @@ let useClickOutside = (handler) => {
 }
 
 function Navbar() {
+  const { setUserLogin } = useGlobalContext()
   const {
     isSidebarOpen,
     openSidebar,
@@ -32,7 +35,6 @@ function Navbar() {
   } = useGlobalContext()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const domNode = useClickOutside(() => {
-    closeDrower()
     setIsSearchOpen(false)
   })
 
@@ -62,12 +64,20 @@ function Navbar() {
           </div>
           <input className='nav-searchInput' />
         </div>
-
-        <Button>
-          <Add />
-        </Button>
-
-        <Avatar className='avatar'>VS</Avatar>
+        <Link to='/Login'>
+          {' '}
+          <Button
+            variant='contained'
+            color='secondary'
+            size='small'
+            onClick={() => {
+              firebase.auth().signOut()
+              setUserLogin(false)
+            }}
+          >
+            SignOut
+          </Button>
+        </Link>
       </div>
     </nav>
   )

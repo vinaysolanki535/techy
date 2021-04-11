@@ -1,4 +1,6 @@
 .drower {
+  display: flex;
+  flex-direction: column;
   z-index: 5;
   height: 100.5%;
   width: 40%;
@@ -12,4 +14,22 @@
 .drower_close {
   width: 0;
   display: none;
+}
+
+.drawer_header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-titleContainer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.task-info-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
 }

@@ -13,15 +13,16 @@ import { auth } from './Firebase'
 import { useEffect, useState } from 'react'
 import { useGlobalContext } from './Context'
 import Signup from './Signup'
+import firebase from 'firebase'
 
 function App() {
   const [{ user }, dispatch] = useStateValue()
-  const { userLogin, setUId } = useGlobalContext()
+  const { userLogin, setUserLogin } = useGlobalContext()
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       console.log('The User Is >>>', authUser)
-
+      setUserLogin(false)
       if (authUser) {
         //the user is logged in
         dispatch({
@@ -36,10 +37,6 @@ function App() {
         })
       }
     })
-  }, [])
-
-  useEffect(() => {
-    setUId(null)
   }, [])
 
   console.log(`userlogin = ${userLogin}`)

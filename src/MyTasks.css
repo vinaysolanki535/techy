@@ -42,6 +42,10 @@
 }
 
 .mytasks_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
   margin-top: 10px;
   margin-left: 14px;
   width: 30vh;
@@ -50,4 +54,16 @@
   border-radius: 7px;
   box-shadow: 5px rgb(226, 226, 226);
   background-color: white;
+}
+
+.task_title {
+  display: flex;
+  justify-content: space-between;
+  width: 25vh;
+  align-items: center;
+}
+
+.task_desc {
+  display: flex;
+  width: 25vh;
 }

@@ -5,6 +5,7 @@
   flex-direction: column;
   display: visible;
   transition: width 0.15s ease-in-out;
+  z-index: 5;
 }
 
 .sidebar_header {

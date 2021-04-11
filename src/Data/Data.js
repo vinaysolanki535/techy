@@ -23,11 +23,7 @@ const Data = [
     name: 'Dashboard',
     icon: <Dashboard fontSize='small' />,
   },
-  {
-    link: '/inbox',
-    name: 'Inbox',
-    icon: <InboxOutlined fontSize='small' />,
-  },
+
   {
     link: '/goals',
     name: 'My Goals',

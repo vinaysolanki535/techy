@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { db } from './Firebase'
 import { useStateValue } from './StateProvider'
-
+import Login from './Login'
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -12,6 +12,7 @@ const AppProvider = ({ children }) => {
   const [{ user }, dispatch] = useStateValue()
   const [isDrowerOpen, setIsDrowerOpen] = useState(false)
   const [userLogin, setUserLogin] = useState(false)
+  const [drowarData, setDrowarData] = useState({})
 
   useEffect(() => {
     if (user != null) {
@@ -22,11 +23,11 @@ const AppProvider = ({ children }) => {
           if (val.exists) {
             setUserName(val.data().name)
             setUId(user.uid)
+            setUserLogin(true)
             console.log('user accepted')
           }
         })
     } else {
-      console.log('user is null')
     }
   }, [user])
 
@@ -63,6 +64,8 @@ const AppProvider = ({ children }) => {
         closeDrower,
         userLogin,
         setUserLogin,
+        drowarData,
+        setDrowarData,
       }}
     >
       {children}

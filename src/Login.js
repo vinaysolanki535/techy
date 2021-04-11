@@ -62,9 +62,9 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
+          setUserLogin(true)
           const uId = auth.uId
           const uName = email.split('@')[0]
-          setUserLogin(true)
           setUserName(uName)
           setUId(uId)
           history.push('/home')
